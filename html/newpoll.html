@@ -1,17 +1,11 @@
-<html>
-<head>
-  <title>fufăl - new poll</title>
-</head>
-
-<body>
-
+{include file = "header.html"}
+<div class = "login-form">
   <form name="poll" action="create_poll.php" method="post">
-    Title: <input type="text" name="title" /> <br/>
-    Description: <input type="text" name="description" /> <br/>
-
-    Your name: <input type="text" name="name" /> <br/>
-    <input type="submit" value="Submit" />
+    <label> Title: </label> <input type="text" name="title" /> <br/>
+    <label> Description: </label> <input type="text" name="description" /> <br/>
+    <label> Your name: </label> <input type="text" name="name" /> <br/>
+    <button type = "submit"> Next </button>
   </form>
+</div>
 
-</body>
-</html>
+{include file = "footer.html"}
