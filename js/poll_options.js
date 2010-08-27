@@ -7,6 +7,7 @@ function addOption(){
   var option = document.createElement("input");
   option.setAttribute("type", "input");
   option.setAttribute("name", "option" + counter);
+  option.setAttribute("class", "submit");
   option.setAttribute("value", "Option " + counter);
   var remove = document.createElement("input");
   remove.setAttribute("type", "button");

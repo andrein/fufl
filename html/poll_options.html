@@ -1,54 +1,19 @@
-<html>
-<head>
-  <title>fufăl - new poll</title>
+{include file = "header.html"}
 
+<script type="text/javascript" src="js/poll_options.js"></script>
 
-<script type="text/javascript">
-
-var counter = 1;
-
-function addOption(){
-  //get the poll form
-  var form = document.getElementById("options");
-  //create the new poll option
-  var option = document.createElement("input");
-  option.setAttribute("type", "input");
-  option.setAttribute("name", "option" + counter);
-  option.setAttribute("value", "Option " + counter);
-  var remove = document.createElement("input");
-  remove.setAttribute("type", "button");
-  remove.setAttribute("name", "option" + counter);
-  remove.setAttribute("value", "Remove");
-  remove.setAttribute("onClick", "removeOption(" +  counter + ")");
-  var div = document.createElement("div");
-  div.setAttribute("id", counter);
-  //add the option to the form
-  div.appendChild(option);
-  div.appendChild(remove);
-  form.appendChild(div);
-
-  
-  counter++;
-}
-
-function removeOption( num ){
-  var option = document.getElementById(num);
-  option.parentNode.removeChild(option);
-}
-</script>
-
-</head>
-
-<body>
-<p>Title: {$title}</p>
-<p>Description: {$description}</p>
+<div id = "content">
+<p> <b> Title: </b> {$title}</p>
+<p> <b> Description: </b> {$description}</p>
 <br/>
+<div class = "submit-form">
   <form name="poll" action="create_poll.php" method="post">
     <div id="options">Options: <br>
     </div>
     <input type="button" value="Add another option" onClick="addOption()" />
     <input type="submit" value="Submit" />
   </form>
+</div>
+</div>
 
-</body>
-</html>
+{include file = "footer.html"}

@@ -1,11 +1,13 @@
 {include file = "header.html"}
-<div class = "login-form">
-  <form name="poll" action="create_poll.php" method="post">
-    <label> Title: </label> <input type="text" name="title" /> <br/>
-    <label> Description: </label> <input type="text" name="description" /> <br/>
-    <label> Your name: </label> <input type="text" name="name" /> <br/>
-    <button type = "submit"> Next </button>
-  </form>
-</div>
 
+<div id = "content">
+  <div class = "login-form">
+    <form name="poll" action="create_poll.php" method="post">
+      <label class = "login"> Title: </label> <input class = "login" type="text" name="title" /> <br/>
+      <label class = "login"> Description: </label> <input class = "login" type="text" name="description" /> <br/>
+      <label class = "login"> Your name: </label> <input class = "login" type="text" name="name" /> <br/>
+      <button style = "margin-left:257px" type = "submit"> Next </button>
+    </form>
+  </div>
+</div>
 {include file = "footer.html"}

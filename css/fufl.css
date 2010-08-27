@@ -69,21 +69,29 @@ width: 360px;
 border: solid 2px #DEDEDE;
 }
 
-label {
-display:block;
+.submit-form {
+padding: 20px;
+width:360px;
+}
+
+label.login {
 text-align:right;
 width:100px;
 float:left;
 }
 
-input{
+input.login{
 float:left;
 width:200px;
 margin:2px 0 10px 10px;
 }
 
-button{ 
-margin-left:257px;
+input.submit{
+margin: 5px 10px 5px 10px;  
 }
+
+
+
+ 
 
 
