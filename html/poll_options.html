@@ -7,7 +7,7 @@
 <p> <b> Description: </b> {$description}</p>
 <br/>
 <div class = "submit-form">
-  <form name="poll" action="create_poll.php" method="post">
+  <form name="poll" action="process_poll_options.php?poll_id={$poll_id}" method="post">
     <div id="options">Options: <br>
     </div>
     <input type="button" value="Add another option" onClick="addOption()" />

@@ -12,7 +12,7 @@ $poll = mysql_fetch_array($result);
 
 $smarty->assign("title", $poll['title']);
 $smarty->assign("description", $poll['description']);
-
+$smarty->assign("poll_id", $poll_id);
 $smarty->display ("poll_options.html");
 
 ?>

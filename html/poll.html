@@ -1,0 +1,49 @@
+{include file = "header.html"}
+
+<div id = "content">
+<p> <b> Title: </b> {$title}</p>
+<p> <b> Description: </b> {$description}</p>
+<p> <b> Share URL: </b> <a href='poll.php?poll_id={$poll_id}'>Here</a></p>
+<br/>
+<div class = "submit-form">
+  <form name="poll" action="process_poll_results.php?poll_id={$poll_id}" method="post">
+    <div id="options">
+      <table border='1'>
+	<thead>
+          <td></td>
+	  {section name=options loop=$poll_options}
+	  <td>{$poll_options[options].choice}</td>
+	  {/section}
+	</thead>
+        
+        <tfoot>
+	  <td><b>Total</b></td>
+          {section name=total loop=$totals}
+	  <td>{$totals[total]}</td>
+          {/section}
+        </tfoot>
+        
+        <tbody>
+          {section name=name loop=$results}
+	  <tr>
+            <td>{$results[name]['name']}</td>
+	    {section name=color loop=$results[name].choice}
+	    <td style={if $results[name].choice[color] eq 1}'background-color:green'{else}'background-color:red'{/if}></td>
+            {/section}
+	  </tr>
+	  {/section} 
+          <tr>
+	    <td><input type='text' name='name' /></td>
+            {section name=values loop=$poll_options}
+            <td><input type='checkbox' name='choice[]' value={$poll_options[values]['value']} /></td>
+	    {/section}
+	  </tr>
+        </tbody>
+      </table>
+    </div>
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+</div>
+
+{include file = "footer.html"}
