@@ -16,8 +16,12 @@ margin: 0 auto;
 }
 
 #header {
-height: 175px;
+height: 145px;
 background-image:url('../images/banner.png');
+}
+
+#logo {
+margin-top: 0px;
 }
 
 #menu {
