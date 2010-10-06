@@ -2,6 +2,6 @@
 
 require_once("./common.php");
 
-$smarty->display ("newpoll.html");
+$smarty->display ("popup_login.html");
 
 ?>

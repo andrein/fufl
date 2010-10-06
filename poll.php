@@ -1,7 +1,6 @@
 <?php
 
-require_once("./libs.inc.php");
-require_once("./db.php");
+require_once("./common.php");
 
 $poll_id = $_GET['poll_id'];
 
@@ -43,7 +42,8 @@ while ($row = mysql_fetch_assoc($result)){
   $results[] = $res;
 }
 
-$smarty->assign('results', $results);
+if (isset($results))
+  $smarty->assign('results', $results);
 $smarty->assign('totals', $totals);
 $smarty->display ("poll.html");
 

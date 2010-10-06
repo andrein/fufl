@@ -1,0 +1,10 @@
+{include file = "header.html"}
+    <div id = "content">
+      {section name=poll loop=$polls}
+        <h3><a href="poll.php?poll_id={$polls[poll].id}"> {$polls[poll].title} </a> </h3>
+	<p>{$polls[poll].description}</p>
+      {/section}
+    </div>
+    
+{include file = "footer.html"}
+    

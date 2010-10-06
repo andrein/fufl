@@ -1,11 +1,10 @@
 <?php
 
-require_once("./libs.inc.php");
-require_once("./db.php");
+require_once("./common.php");
 
 $poll_id = $_GET['poll_id'];
 
-$query = "SELECT * FROM polls WHERE id = $poll_id";
+$query = sprintf("SELECT * FROM polls WHERE id = %s", mysql_real_escape_string($poll_id));
 $result = mysql_query($query);
 
 $poll = mysql_fetch_array($result);

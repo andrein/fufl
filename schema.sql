@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 04, 2010 at 08:17 PM
+-- Generation Time: Oct 06, 2010 at 10:30 PM
 -- Server version: 5.1.41
 -- PHP Version: 5.3.2-1ubuntu4.2
 
@@ -24,7 +24,9 @@ CREATE TABLE IF NOT EXISTS `polls` (
   `title` varchar(32) NOT NULL,
   `description` varchar(1024) NOT NULL,
   `name` varchar(32) NOT NULL,
-  PRIMARY KEY (`id`)
+  `owner_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `owner_id` (`owner_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -63,5 +65,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL,
+  `email` varchar(320) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;

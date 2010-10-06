@@ -5,7 +5,7 @@ $db_user = "fufl";
 $db_pass = "fuflrulz";
 $db_data = "fufl";
 
-$conn = mysql_connect ($db_host, $db_user, $db_pass) OR DIE ("Can't connect to the database");
-mysql_select_db ($db_data, $conn);
+$conn = mysql_connect ($db_host, $db_user, $db_pass) OR die(mysql_error());
+mysql_select_db ($db_data, $conn) OR die(mysql_error());
 
 ?>

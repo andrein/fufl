@@ -1,5 +1,5 @@
 <?php
-require_once("./db.php");
+require_once("./common.php");
 
 $poll_id = $_GET['poll_id'];
 $name = $_POST['name'];

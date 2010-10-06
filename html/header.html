@@ -1,19 +1,28 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>Fufl</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="css/fufl.css" />
 </head>
 
 <body>
-  <div id = "page">
-    <div id = "header">
-      <img src="images/fufl.png" />
+  <div id="page">
+    <div id="header">
+      <a href="index.php"> <img src="images/fufl.png" alt="Fufl" /> </a>
     </div>
-    <div id = "menu">
-      <ul class = "menu">
-	<li class = "menu-element"> <a class = "menu-link" href="newpoll.php"> New poll </a> </li>
-	<li class = "menu-element"> <a class = "menu-link" href=""> Meniu 1 </a> </li>
-	<li class = "menu-element"> <a class = "menu-link" href=""> Meniu 2 </a> </li>
+    <div id="menu">
+      <ul>
+	<li> <a href="newpoll.php"> New poll </a> </li>
+        {if $username eq ''}
+	<script type="text/javascript" src="js/login.js"></script>
+	<li class="right"> <a href="#" onclick="popup('popup_register.php');"> Register </a> </li>
+	<li class="right"> <a href="#" onclick="popup('popup_login.php');"> Log in </a> </li>
+        {else}
+	<li class="right"> <a href="account/logout.php"> Log out </a> </li>
+	<li class="right"> <a href="mypolls.php"> My polls </a> </li>
+        {/if}	
       </ul>      
     </div>
     
